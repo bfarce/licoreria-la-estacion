@@ -38,6 +38,13 @@ export function Navbar() {
         <a href="#inicio" className="flex min-w-0 items-center gap-3">
           <img
             src={logoImg}
+            onError={(e) => {
+              const target = e.currentTarget;
+              if (!target.dataset.fallback) {
+                target.dataset.fallback = "true";
+                target.src = "/logo-la-estacion.png";
+              }
+            }}
             alt={`Logo de ${SITE.nombre} Licorera`}
             width={200}
             height={136}

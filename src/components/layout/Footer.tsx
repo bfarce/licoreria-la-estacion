@@ -17,6 +17,13 @@ export function Footer() {
         <div className="lg:col-span-2">
           <img
             src={logoImg}
+            onError={(e) => {
+              const target = e.currentTarget;
+              if (!target.dataset.fallback) {
+                target.dataset.fallback = "true";
+                target.src = "/logo-la-estacion.png";
+              }
+            }}
             alt={`Logo de ${SITE.nombre} Licorera`}
             width={320}
             height={218}
