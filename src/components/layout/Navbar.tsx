@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
+import logoImg from "@/assets/logo-la-estacion.png";
 import { ActionButton } from "@/components/ui/action-button";
 import { MENSAJES, SITE, whatsappUrl } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -36,7 +37,7 @@ export function Navbar() {
       >
         <a href="#inicio" className="flex min-w-0 items-center gap-3">
           <img
-            src="/logo-la-estacion.png"
+            src={logoImg}
             alt={`Logo de ${SITE.nombre} Licorera`}
             width={200}
             height={136}
