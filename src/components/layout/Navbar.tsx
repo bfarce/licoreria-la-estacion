@@ -9,7 +9,6 @@ const LINKS = [
   { label: "Inicio", href: "#inicio" },
   { label: "Productos", href: "#productos" },
   { label: "Mayoristas", href: "#mayoristas" },
-  { label: "Ubicación", href: "#ubicacion" },
   { label: "Nosotros", href: "#nosotros" },
   { label: "Contacto", href: "#contacto" },
 ];

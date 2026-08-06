@@ -1,4 +1,14 @@
-import { Clock, Facebook, Instagram, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { APIProvider, Map, AdvancedMarker } from "@vis.gl/react-google-maps";
+import {
+  Clock,
+  Facebook,
+  Instagram,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Phone,
+  Store,
+} from "lucide-react";
 import { MENSAJES, SITE, externalClick, whatsappUrl } from "@/config/site";
 import { TikTokIcon } from "@/components/ui/tiktok-icon";
 import { LOGO_IMAGE } from "@/assets/logo-data";
@@ -7,15 +17,87 @@ const LINKS = [
   { label: "Inicio", href: "#inicio" },
   { label: "Productos", href: "#productos" },
   { label: "Mayoristas", href: "#mayoristas" },
-  { label: "Ubicación", href: "#ubicacion" },
   { label: "Nosotros", href: "#nosotros" },
+  { label: "Contacto", href: "#contacto" },
+];
+
+const LOCATION_COORDS = { lat: 1.849722, lng: -76.048611 };
+
+const LUXURY_MAP_STYLES: google.maps.MapTypeStyle[] = [
+  { elementType: "geometry", stylers: [{ color: "#0f0d0b" }] },
+  { elementType: "labels.text.stroke", stylers: [{ color: "#0f0d0b" }] },
+  { elementType: "labels.text.fill", stylers: [{ color: "#c5a059" }] },
+  {
+    featureType: "administrative.locality",
+    elementType: "labels.text.fill",
+    stylers: [{ color: "#dfc17b" }],
+  },
+  {
+    featureType: "poi",
+    elementType: "labels.text.fill",
+    stylers: [{ color: "#a88746" }],
+  },
+  {
+    featureType: "poi.park",
+    elementType: "geometry",
+    stylers: [{ color: "#161310" }],
+  },
+  {
+    featureType: "road",
+    elementType: "geometry",
+    stylers: [{ color: "#241f19" }],
+  },
+  {
+    featureType: "road",
+    elementType: "geometry.stroke",
+    stylers: [{ color: "#161310" }],
+  },
+  {
+    featureType: "road",
+    elementType: "labels.text.fill",
+    stylers: [{ color: "#9e8147" }],
+  },
+  {
+    featureType: "road.highway",
+    elementType: "geometry",
+    stylers: [{ color: "#3a3024" }],
+  },
+  {
+    featureType: "road.highway",
+    elementType: "geometry.stroke",
+    stylers: [{ color: "#1f1a14" }],
+  },
+  {
+    featureType: "transit",
+    elementType: "geometry",
+    stylers: [{ color: "#181512" }],
+  },
+  {
+    featureType: "water",
+    elementType: "geometry",
+    stylers: [{ color: "#080706" }],
+  },
+  {
+    featureType: "water",
+    elementType: "labels.text.fill",
+    stylers: [{ color: "#6b5832" }],
+  },
 ];
 
 export function Footer() {
+  const API_KEY =
+    process.env.GOOGLE_MAPS_PLATFORM_KEY ||
+    (import.meta as unknown as { env?: Record<string, string> }).env
+      ?.VITE_GOOGLE_MAPS_PLATFORM_KEY ||
+    (globalThis as unknown as Record<string, string>).GOOGLE_MAPS_PLATFORM_KEY ||
+    "";
+
+  const hasValidKey = Boolean(API_KEY) && API_KEY !== "YOUR_API_KEY";
+
   return (
     <footer className="border-t border-border/70 bg-surface">
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 lg:grid-cols-4 lg:px-8">
-        <div className="lg:col-span-2">
+      <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 lg:grid-cols-12 lg:px-8">
+        <div className="lg:col-span-4">
           <img
             src={LOGO_IMAGE}
             alt={`Logo de ${SITE.nombre} Licorera`}
@@ -72,7 +154,7 @@ export function Footer() {
           </div>
         </div>
 
-        <nav aria-label="Enlaces del pie de página">
+        <nav aria-label="Enlaces del pie de página" className="lg:col-span-3">
           <h3 className="text-[0.68rem] uppercase tracking-[0.3em] text-gold">Navegación</h3>
           <ul className="mt-5 space-y-3">
             {LINKS.map((l) => (
@@ -88,7 +170,7 @@ export function Footer() {
           </ul>
         </nav>
 
-        <div>
+        <div id="contacto" className="flex flex-col lg:col-span-5">
           <h3 className="text-[0.68rem] uppercase tracking-[0.3em] text-gold">Contacto</h3>
           <ul className="mt-5 space-y-4 text-sm text-muted-foreground">
             <li className="flex gap-3">
@@ -110,6 +192,52 @@ export function Footer() {
               </a>
             </li>
           </ul>
+
+          {/* Recuadro con el mapa personalizado */}
+          <div className="mt-6 relative h-48 sm:h-56 w-full overflow-hidden rounded-2xl border border-gold/40 shadow-xl">
+            {hasValidKey ? (
+              <APIProvider apiKey={API_KEY} version="weekly">
+                <Map
+                  defaultCenter={LOCATION_COORDS}
+                  defaultZoom={16}
+                  mapId="LA_ESTACION_LUXURY_MAP_FOOTER"
+                  styles={LUXURY_MAP_STYLES}
+                  internalUsageAttributionIds={["gmp_mcp_codeassist_v1_aistudio"]}
+                  style={{ width: "100%", height: "100%" }}
+                  disableDefaultUI={false}
+                  zoomControl={true}
+                >
+                  <AdvancedMarker position={LOCATION_COORDS} title={SITE.nombre}>
+                    <div className="relative flex items-center justify-center">
+                      <div className="absolute h-10 w-10 animate-ping rounded-full bg-gold/30" />
+                      <div className="relative flex h-8 w-8 items-center justify-center rounded-full border-2 border-gold bg-black shadow-[0_0_15px_oklch(0.75_0.105_85)]">
+                        <Store className="h-4 w-4 text-gold" />
+                      </div>
+                    </div>
+                  </AdvancedMarker>
+                </Map>
+              </APIProvider>
+            ) : (
+              <div className="relative h-full w-full bg-[#0d0c0b]">
+                <iframe
+                  title={`Ubicación de ${SITE.nombre} en Google Maps`}
+                  src={`https://maps.google.com/maps?q=${encodeURIComponent(
+                    `${SITE.direccion}, Pitalito, Huila, Colombia`,
+                  )}&t=&z=16&ie=UTF8&iwloc=&output=embed`}
+                  width="100%"
+                  height="100%"
+                  style={{
+                    border: 0,
+                    filter: "invert(90%) hue-rotate(180deg) contrast(1.2) brightness(0.85)",
+                  }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="h-full w-full opacity-90"
+                />
+              </div>
+            )}
+          </div>
         </div>
       </div>
 

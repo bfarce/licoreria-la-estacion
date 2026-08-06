@@ -82,7 +82,7 @@ export function Hero() {
         aria-label="Ir a categorías"
         className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 text-gold/70 transition-colors hover:text-gold md:block"
       >
-        <ArrowDown className="h-6 w-6 animate-bounce" aria-hidden="true" />
+        <ArrowDown className="h-6 w-6 animate-bounce-smooth" aria-hidden="true" />
       </a>
     </section>
   );

@@ -6,7 +6,6 @@ import { Hero } from "@/components/sections/Hero";
 import { Categorias } from "@/components/sections/Categorias";
 import { ProductosDestacados } from "@/components/sections/ProductosDestacados";
 import { Mayoristas } from "@/components/sections/Mayoristas";
-import { Ubicacion } from "@/components/sections/Ubicacion";
 import { PorQueElegirnos } from "@/components/sections/PorQueElegirnos";
 import { Nosotros } from "@/components/sections/Nosotros";
 import { Testimonios } from "@/components/sections/Testimonios";
@@ -58,7 +57,6 @@ function Index() {
         <Categorias />
         <ProductosDestacados />
         <Mayoristas />
-        <Ubicacion />
         <PorQueElegirnos />
         <Nosotros />
         <Testimonios />
