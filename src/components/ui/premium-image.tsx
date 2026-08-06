@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
 type PremiumImageProps = {
@@ -28,13 +28,20 @@ export function PremiumImage({
   priority = false,
 }: PremiumImageProps) {
   const [loaded, setLoaded] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    if (imgRef.current?.complete) {
+      setLoaded(true);
+    }
+  }, [src]);
 
   return (
     <div className={cn("media-frame", className)}>
       <div
         aria-hidden="true"
         className={cn(
-          "absolute inset-0 z-[1] bg-[var(--gradient-dark)] transition-opacity duration-700",
+          "absolute inset-0 z-[1] bg-[var(--gradient-dark)] transition-opacity duration-700 pointer-events-none",
           loaded ? "opacity-0" : "opacity-100",
         )}
       >
@@ -42,6 +49,7 @@ export function PremiumImage({
       </div>
 
       <img
+        ref={imgRef}
         src={src}
         alt={alt}
         width={width}
@@ -49,6 +57,7 @@ export function PremiumImage({
         loading={priority ? "eager" : "lazy"}
         decoding="async"
         onLoad={() => setLoaded(true)}
+        onError={() => setLoaded(true)}
         className={cn(
           "h-full w-full object-cover",
           loaded ? "img-loaded" : "img-loading",
