@@ -1,552 +1,131 @@
-# Liquid Luxury
+# La Estación Licorera
 
-Rol
+> **Licores nacionales e importados al detal y al por mayor.**  
+> Catálogo digital premium con atención personalizada y cotización inmediata a través de WhatsApp.
 
-Actúa como un diseñador UX/UI senior, desarrollador Frontend senior y experto en branding digital especializado en e-commerce premium. Tu objetivo es crear una landing page/web corporativa de alta calidad para una licorería, con un diseño moderno, elegante y profesional, que transmita confianza, exclusividad y calidad.
+---
 
-La página debe parecer desarrollada por un estudio de diseño de primer nivel, cuidando cada detalle visual, las animaciones, la jerarquía visual, la experiencia de usuario y la conversión.
+## 🥃 Sobre La Estación Licorera
 
-No generes una plantilla genérica. Diseña una experiencia premium.
+**La Estación Licorera** es una empresa especializada en la comercialización y distribución de bebidas alcohólicas nacionales e importadas de las marcas más reconocidas del mercado. Ofrecemos atención al detal para clientes particulares y soluciones integrales de venta al por mayor para negocios, eventos, bares, restaurantes y distribuidores.
 
-Objetivo del proyecto
+Nos distinguimos por:
 
-Desarrollar una página web para una licorería que vende productos:
+- **Garantía de originalidad**: 100% productos originales y estampillados.
+- **Precios competitivos**: Tarifas preferenciales para compras al detal y volumen mayorista.
+- **Atención personalizada**: Asesoría inmediata para seleccionar los mejores licores según cada ocasión.
+- **Envíos y entregas coordinadas**: Despachos eficientes en zona urbana y envíos nacionales.
 
-Al detal
+---
 
-Al por mayor
+## 🚀 Características del Sitio Web
 
-La web funcionará inicialmente como un catálogo digital donde los clientes podrán explorar los productos y solicitar cotizaciones directamente mediante WhatsApp.
+Esta plataforma web actúa como un **catálogo digital interactivo y canal de ventas**, diseñado con una estética elegante y moderna en tonos oscuros y dorados para brindar una experiencia de usuario de nivel premium.
 
-No existirá carrito de compras ni pagos en línea en esta primera versión.
+### Funcionalidades Clave
 
-Posteriormente el catálogo será administrado desde un panel administrativo conectado a un backend.
+- **Hero Interactivo**: Presentación de la marca con acceso rápido al catálogo y cotización en un clic.
+- **Catálogo Organizado por Categorías**: Navegación intuitiva entre Whisky, Ron, Tequila, Vodka, Vinos, Champañas, Cervezas, Aguardientes y Licores Importados.
+- **Búsqueda y Filtros Dinámicos**: Filtrado instantáneo por nombre, marca, categoría y rango de precios.
+- **Fichas de Producto Detalladas**: Información clara sobre marcas, presentaciones, notas de cata y precios sugeridos.
+- **Integración Directa con WhatsApp**: Todos los botones de acción ("Consultar producto", "Solicitar cotización", "Hablar con asesor") generan un mensaje estructurado directo al canal de atención de WhatsApp.
+- **Sección Especial para Mayoristas**: Espacio enfocado en beneficios comerciales para clientes corporativos y compras a gran escala.
+- **Preguntas Frecuentes (FAQ)**: Respuestas rápidas en formato acordeón sobre envíos, pagos y compras mayoristas.
+- **Diseño 100% Adaptativo (Responsive)**: Optimizado minuciosamente para smartphones, tablets y pantallas de escritorio.
+- **Arquitectura Desacoplada**: Capa de servicios (`catalogService`) preparada para integrarse en el futuro con una API REST (ej. Spring Boot / PostgreSQL).
 
-Tecnologías
+---
 
-Frontend:
+## 🛠️ Tecnologías Utilizadas
 
-Lovable
+- **Frontend**: [React 18](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- **Enrutamiento**: [TanStack Router](https://tanstack.com/router)
+- **Estilos**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animaciones e Interacción**: Framer Motion / Lucide Icons
+- **Servidor & Build**: Vite / Node.js
+- **Formateo y Calidad**: Prettier + ESLint
 
-React
+---
 
-TypeScript
+## 📁 Estructura del Proyecto
 
-TailwindCSS
-
-Responsive Design
-
-Backend (posteriormente)
-
-Spring Boot
-
-PostgreSQL
-
-API REST
-
-Desde el frontend deja preparada la arquitectura para consumir una API REST.
-
-No utilizar datos estáticos difíciles de reemplazar.
-
-Los productos deben provenir de un arreglo fácilmente reemplazable por un endpoint.
-
-Identidad visual
-
-La identidad debe transmitir:
-
-Elegancia
-
-Sofisticación
-
-Calidad
-
-Exclusividad
-
-Confianza
-
-Modernidad
-
-No utilizar colores infantiles.
-
-Inspirarse en marcas premium.
-
-Paleta sugerida:
-
-Negro (#0F0F0F)
-
-Dorado (#C8A14A)
-
-Blanco
-
-Grises oscuros
-
-Detalles en color vino o whisky.
-
-La interfaz debe verse muy limpia.
-
-Mucho espacio en blanco.
-
-Tipografía moderna.
-
-Utilizar sombras suaves.
-
-Bordes redondeados.
-
-Tarjetas premium.
-
-Animaciones elegantes.
-
-Microinteracciones.
-
-Hover modernos.
-
-Transiciones suaves.
-
-Estilo visual
-
-Inspirarse en páginas como:
-
-Johnnie Walker
-
-Chivas Regal
-
-Jack Daniels
-
-Buchanan's
-
-Macallan
-
-Moët
-
-No copiar el diseño.
-
-Solo inspirarse en el nivel visual.
-
-Debe sentirse como una marca de lujo.
-
-Estructura de la página
-
-Hero
-
-Pantalla completa.
-
-Imagen impactante de una licorería moderna.
-
-Botellas premium.
-
-Iluminación cálida.
-
-Overlay oscuro.
-
-Título grande.
-
-Ejemplo:
-
-"La mejor selección de licores nacionales e importados"
-
-Subtítulo
-
-"Distribuimos licores al por mayor y al detal con las mejores marcas del mercado."
-
-Botón principal
-
-Solicitar cotización
-
-Botón secundario
-
-Ver catálogo
-
-Los botones deben tener animaciones.
-
-Barra de navegación
-
-Logo
-
-Inicio
-
-Productos
-
-Mayoristas
-
-Nosotros
-
-Contacto
-
-Botón destacado:
-
-WhatsApp
-
-Navbar sticky.
-
-Con efecto glassmorphism al hacer scroll.
-
-Sección de categorías
-
-Mostrar categorías como tarjetas.
-
-Ejemplo:
-
-Whisky
-
-Ron
-
-Vodka
-
-Tequila
-
-Aguardiente
-
-Cerveza
-
-Vinos
-
-Champañas
-
-Licores importados
-
-Cada tarjeta con:
-
-Imagen
-
-Nombre
-
-Animación hover
-
-Productos destacados
-
-Grid moderno.
-
-Cada tarjeta contiene:
-
-Imagen
-
-Nombre
-
-Marca
-
-Presentación
-
-Descripción corta
-
-Precio desde
-
-Botón
-
-Consultar por WhatsApp
-
-No agregar carrito.
-
-Productos de ejemplo:
-
-Johnnie Walker Black Label
-
-Old Parr
-
-Buchanan's Deluxe
-
-Jack Daniel's
-
-Baileys
-
-Smirnoff
-
-Absolut
-
-Corona
-
-Heineken
-
-Moët & Chandon
-
-Todos con imágenes de ejemplo.
-
-Venta al por mayor
-
-Una sección premium.
-
-Con fondo diferente.
-
-Explicar beneficios:
-
-Precios especiales
-
-Distribución
-
-Atención personalizada
-
-Grandes cantidades
-
-Cotización inmediata
-
-Botón grande
-
-Solicitar cotización
-
-¿Por qué elegirnos?
-
-Mostrar íconos grandes.
-
-Entrega rápida
-
-Productos originales
-
-Excelente atención
-
-Marcas reconocidas
-
-Precios competitivos
-
-Cotización inmediata
-
-Nosotros
-
-Historia corta.
-
-Explicar que la empresa distribuye licores nacionales e importados.
-
-Texto elegante.
-
-Agregar fotografía del local (placeholder).
-
-Testimonios
-
-Tarjetas modernas.
-
-Clientes ficticios.
-
-Calificación con estrellas.
-
-Preguntas frecuentes
-
-Acordeón.
-
-Ejemplos:
-
-¿Venden al por mayor?
-
-¿Realizan domicilios?
-
-¿Cómo solicito una cotización?
-
-¿Qué medios de pago aceptan?
-
-CTA final
-
-Gran sección.
-
-Fondo elegante.
-
-Texto:
-
-"¿Necesitas una cotización?"
-
-Botón enorme de WhatsApp.
-
-Debe ser imposible ignorarlo.
-
-Footer
-
-Logo
-
-Información
-
-Horario
-
-Dirección (placeholder)
-
-Correo
-
-Redes sociales
-
-WhatsApp
-
-Derechos reservados.
-
-WhatsApp
-
-Toda la comunicación comercial debe hacerse mediante WhatsApp.
-
-Todos los botones de acción deben abrir WhatsApp.
-
-Ejemplo:
-
-Consultar producto
-
-Solicitar cotización
-
-Hablar con un asesor
-
-Comprar al por mayor
-
-Pedir información
-
-El número debe quedar como una constante fácil de modificar posteriormente.
-
-Backend futuro
-
-Preparar el frontend para conectarse posteriormente con un backend.
-
-Existirá un panel administrativo donde un administrador podrá:
-
-Crear productos
-
-Editar productos
-
-Eliminar productos
-
-Activar o desactivar productos
-
-Cambiar precios
-
-Cambiar imágenes
-
-Administrar categorías
-
-Administrar productos destacados
-
-La interfaz debe consumir datos mediante una capa de servicios para facilitar la futura integración con la API REST.
-
-Modelo de producto esperado
-
-Cada producto debe contemplar campos como:
-
-id
-
-nombre
-
-marca
-
-categoría
-
-descripción
-
-precio
-
-imagen
-
-presentación
-
-disponible
-
-destacado
-
-Utilizar datos de ejemplo y estructurar el código para que sea sencillo reemplazar el origen de datos por una API.
-
-Responsive Design
-
-Debe verse perfecto en:
-
-Desktop
-
-Laptop
-
-Tablet
-
-Móvil
-
-No simplemente adaptarse.
-
-Debe sentirse diseñado específicamente para cada dispositivo.
-
-Animaciones
-
-Utilizar animaciones elegantes.
-
-Fade In
-
-Slide Up
-
-Scale
-
-Hover
-
-Transiciones suaves
-
-No exagerar.
-
-Accesibilidad
-
-Contraste correcto.
-
-Botones grandes.
-
-Fuentes legibles.
-
-Buen espaciado.
-
-Jerarquía visual clara.
-
-Buenas prácticas de accesibilidad.
-
-SEO
-
-Preparar la página con:
-
-Meta Title
-
-Meta Description
-
-Open Graph
-
-Etiquetas semánticas
-
-Alt en imágenes
-
-Buenas prácticas SEO.
-
-Rendimiento
-
-Optimizar imágenes.
-
-Lazy Loading.
-
-Componentes reutilizables.
-
-Código limpio.
-
-Buena organización.
-
-Evitar duplicación.
-
-Calidad del código
-
-Generar un proyecto profesional con:
-
-Componentes reutilizables.
-
-Organización clara de carpetas.
-
-Código limpio y mantenible.
-
-Tipado con TypeScript.
-
-Variables reutilizables para colores y estilos.
-
-Preparado para escalar.
-
-Arquitectura orientada a futuras integraciones con backend.
-
-Objetivo final
-
-El resultado debe ser una página web de nivel comercial que transmita lujo, confianza y profesionalismo desde el primer segundo. La experiencia debe motivar al usuario a explorar el catálogo y contactar por WhatsApp para solicitar una cotización. El diseño debe sentirse exclusivo, moderno y cuidadosamente elaborado, con una calidad visual comparable a la de una agencia de diseño especializada en marcas premium.
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/5fb50435-5842-4cc4-861b-308d3f54235c).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+```text
+├── public/                  # Archivos estáticos e imágenes públicas
+├── src/
+│   ├── assets/              # Logos, imágenes de productos e ilustraciones
+│   ├── components/
+│   │   ├── layout/          # Navbar, Footer, WhatsApp Flotante
+│   │   ├── sections/        # Secciones de la landing (Hero, Productos, Mayoristas, FAQ, etc.)
+│   │   └── ui/              # Componentes de interfaz reutilizables (Botones, Tarjetas, Modales)
+│   ├── config/              # Configuración global del sitio (Teléfonos, Redes, Mensajes)
+│   ├── data/                # Datos del catálogo de productos (Mock para API)
+│   ├── hooks/               # Hooks personalizados de React (Scroll, Revelación, Movil)
+│   ├── routes/              # Rutas principales de la aplicación
+│   ├── services/            # Capa de servicio de productos (CatalogService)
+│   ├── types/               # Definiciones y tipos TypeScript
+│   └── styles.css           # Configuración global de CSS y Tailwind
+├── package.json             # Dependencias y scripts del proyecto
+└── tsconfig.json            # Configuración de TypeScript
 ```
+
+---
+
+## 💻 Instalación y Ejecución Local
+
+### Requisitos Previos
+
+- **Node.js** v18.0.0 o superior
+- **npm** v9.0.0 o superior
+
+### Pasos
+
+1. **Clonar el repositorio:**
+
+   ```bash
+   git clone <URL_DEL_REPOSITORIO>
+   cd la-estacion-licorera
+   ```
+
+2. **Instalar dependencias:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Iniciar el servidor de desarrollo:**
+   ```bash
+   npm run dev
+   ```
+   La aplicación estará disponible en `http://localhost:3000`.
+
+---
+
+## 📜 Scripts Disponibles
+
+- `npm run dev`: Ejecuta la aplicación en modo desarrollo.
+- `npm run build`: Compila y optimiza la aplicación para producción.
+- `npm run start`: Inicia el servidor de producción.
+- `npm run lint`: Analiza el código en busca de errores o advertencias.
+- `npm run format`: Aplica el formato automático de código con Prettier.
+
+---
+
+## ⚙️ Configuración del Sitio
+
+Los datos de contacto, enlace de WhatsApp, eslogan y redes sociales de **La Estación Licorera** se pueden personalizar en el archivo:
+`src/config/site.ts`
+
+```typescript
+export const SITE = {
+  nombre: "La Estación",
+  eslogan: "La mejor selección de licores nacionales e importados",
+  whatsapp: "+573000000000",
+  // ...
+};
+```
+
+---
+
+## 📄 Licencia
+
+© 2026 **La Estación Licorera**. Todos los derechos reservados.
