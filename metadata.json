@@ -1,0 +1,6 @@
+{
+  "name": "La Estación - Licorería Premium",
+  "description": "Catálogo y tienda de licores premium, venta mayorista y minorista",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

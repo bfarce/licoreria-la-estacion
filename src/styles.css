@@ -1,0 +1,438 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Sistema de diseño — Licorera premium.
+ * Negro profundo, dorado, vino. Todos los colores en oklch.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-wine: var(--wine);
+  --color-whisky: var(--whisky);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-whatsapp: var(--whatsapp);
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
+  --shadow-premium: 0 24px 60px -24px oklch(0 0 0 / 0.8);
+  --shadow-gold: 0 18px 45px -20px oklch(0.78 0.11 85 / 0.55);
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-fade-in: fade-in 0.8s ease-out both;
+  --animate-shimmer: shimmer 3.5s linear infinite;
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: oklch(0.15 0.004 60);
+  --foreground: oklch(0.97 0.004 85);
+  --card: oklch(0.19 0.005 60);
+  --card-foreground: oklch(0.97 0.004 85);
+  --popover: oklch(0.19 0.005 60);
+  --popover-foreground: oklch(0.97 0.004 85);
+  --primary: oklch(0.75 0.105 85);
+  --primary-foreground: oklch(0.15 0.004 60);
+  --secondary: oklch(0.24 0.006 60);
+  --secondary-foreground: oklch(0.97 0.004 85);
+  --muted: oklch(0.24 0.006 60);
+  --muted-foreground: oklch(0.72 0.008 75);
+  --accent: oklch(0.28 0.02 60);
+  --accent-foreground: oklch(0.9 0.07 85);
+  --destructive: oklch(0.55 0.19 25);
+  --destructive-foreground: oklch(0.97 0.004 85);
+  --border: oklch(0.32 0.008 70 / 0.55);
+  --input: oklch(0.32 0.008 70 / 0.6);
+  --ring: oklch(0.75 0.105 85);
+  --gold: oklch(0.75 0.105 85);
+  --gold-soft: oklch(0.86 0.06 88);
+  --wine: oklch(0.36 0.11 15);
+  --whisky: oklch(0.6 0.13 62);
+  --surface: oklch(0.12 0.003 60);
+  --surface-elevated: oklch(0.21 0.006 60);
+  --whatsapp: oklch(0.68 0.16 152);
+  --gradient-gold: linear-gradient(
+    115deg,
+    oklch(0.66 0.09 78),
+    oklch(0.88 0.07 92),
+    oklch(0.7 0.1 82)
+  );
+  --gradient-dark: linear-gradient(180deg, oklch(0.12 0.003 60), oklch(0.17 0.006 55));
+  --gradient-wine: linear-gradient(140deg, oklch(0.22 0.05 20), oklch(0.14 0.01 40));
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: var(--gold);
+    color: var(--primary-foreground);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@utility text-gold-gradient {
+  background: var(--gradient-gold);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility hairline {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklab, var(--gold) 60%, transparent),
+    transparent
+  );
+  height: 1px;
+}
+
+@utility glass-nav {
+  background: color-mix(in oklab, var(--surface) 72%, transparent);
+  backdrop-filter: blur(18px) saturate(150%);
+  border-bottom: 1px solid color-mix(in oklab, var(--gold) 18%, transparent);
+}
+
+@utility card-premium {
+  background: var(--gradient-dark);
+  border: 1px solid color-mix(in oklab, var(--gold) 14%, transparent);
+  box-shadow: var(--shadow-premium);
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.4s ease,
+    box-shadow 0.5s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in oklab, var(--gold) 45%, transparent);
+    box-shadow: var(--shadow-gold);
+  }
+}
+
+@utility reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@utility reveal-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------- Animaciones premium ($10,000 Studio Quality) ---------- */
+
+@keyframes ken-burns {
+  0% {
+    transform: scale(1.02) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.08) translate3d(-1%, -0.8%, 0);
+  }
+  100% {
+    transform: scale(1.04) translate3d(0.8%, 0.8%, 0);
+  }
+}
+
+@keyframes sheen {
+  0% {
+    transform: translateX(-120%) skewX(-18deg);
+  }
+  100% {
+    transform: translateX(220%) skewX(-18deg);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Imagen de fondo con movimiento lento tipo cine */
+@utility ken-burns {
+  animation: ken-burns 35s cubic-bezier(0.25, 1, 0.5, 1) infinite alternate;
+  will-change: transform;
+}
+
+@utility float-soft {
+  animation: float-soft 6s ease-in-out infinite;
+}
+
+@utility glow-pulse {
+  animation: glow-pulse 5s ease-in-out infinite;
+}
+
+/* Marco de imagen premium: zoom suave + brillo diagonal al hover */
+@utility media-frame {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--surface);
+
+  & img {
+    transition:
+      transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+      filter 1s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 0.8s ease;
+    will-change: transform;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(
+      100deg,
+      transparent 35%,
+      color-mix(in oklab, var(--gold-soft) 26%, transparent) 50%,
+      transparent 65%
+    );
+    transform: translateX(-120%) skewX(-18deg);
+    opacity: 0;
+  }
+}
+
+@utility media-hover {
+  &:hover .media-frame img,
+  &:focus-visible .media-frame img {
+    transform: scale(1.04);
+    filter: saturate(1.06) contrast(1.02);
+  }
+
+  &:hover .media-frame::after,
+  &:focus-visible .media-frame::after {
+    opacity: 1;
+    animation: sheen 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+/* Carga progresiva de imágenes (blur-up sin salto de escala) */
+@utility img-loading {
+  opacity: 0;
+  filter: blur(14px);
+  transform: scale(1);
+}
+
+@utility img-loaded {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1);
+}
+
+/* Subrayado dorado animado */
+@utility gold-underline {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 1px;
+    width: 100%;
+    background: var(--gradient-gold);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+/* Variantes de revelado al hacer scroll */
+@utility reveal-up {
+  opacity: 0;
+  transform: translateY(28px);
+  filter: blur(4px);
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.9s ease;
+}
+
+@utility reveal-scale {
+  opacity: 0;
+  transform: scale(0.98) translateY(16px);
+  filter: blur(4px);
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.9s ease;
+}
+
+@utility reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  filter: blur(4px);
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.9s ease;
+}
+
+@utility reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  filter: blur(4px);
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.9s ease;
+}
+
+@utility reveal-fade {
+  opacity: 0;
+  filter: blur(6px);
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.9s ease;
+}
+
+@utility reveal-in {
+  opacity: 1;
+  transform: none;
+  filter: blur(0);
+}
+
+/* Brillo diagonal al pasar el cursor sobre tarjetas */
+@utility sheen-hover {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    background: linear-gradient(
+      100deg,
+      transparent 38%,
+      color-mix(in oklab, var(--gold-soft) 20%, transparent) 50%,
+      transparent 62%
+    );
+    transform: translateX(-120%) skewX(-18deg);
+    opacity: 0;
+  }
+
+  &:hover::before,
+  &:focus-visible::before {
+    opacity: 1;
+    animation: sheen 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
