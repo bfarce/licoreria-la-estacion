@@ -2,24 +2,25 @@ import { ArrowDown, MessageCircle } from "lucide-react";
 import heroImg from "@/assets/hero-licoreria.jpg";
 import { ActionButton } from "@/components/ui/action-button";
 import { MENSAJES, whatsappUrl } from "@/config/site";
-import { useParallax } from "@/hooks/useParallax";
+import { useScrollParallax } from "@/hooks/useScrollParallax";
 
 export function Hero() {
-  const parallax = useParallax<HTMLImageElement>(0.12);
+  const parallaxRef = useScrollParallax<HTMLImageElement>({ speed: 0.28, scale: 1.12 });
 
   return (
     <section id="inicio" className="relative flex min-h-[100svh] items-center overflow-hidden">
-      <img
-        ref={parallax.ref}
-        src={heroImg}
-        alt="Interior de una licorería moderna con botellas premium iluminadas en tonos cálidos"
-        width={1920}
-        height={1280}
-        style={parallax.style}
-        className="ken-burns absolute inset-0 h-[115%] w-full object-cover origin-center"
-      />
-      <div className="absolute inset-0 bg-[linear-gradient(100deg,oklch(0.1_0_0/0.94)_0%,oklch(0.1_0_0/0.78)_45%,oklch(0.1_0_0/0.5)_100%)] pointer-events-none" />
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(to_top,var(--background),transparent)] pointer-events-none" />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <img
+          ref={parallaxRef}
+          src={heroImg}
+          alt="Interior de una licorería moderna con botellas premium iluminadas en tonos cálidos"
+          width={1920}
+          height={1280}
+          className="absolute inset-0 h-full w-full object-cover origin-center"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(100deg,oklch(0.1_0_0/0.94)_0%,oklch(0.1_0_0/0.78)_45%,oklch(0.1_0_0/0.5)_100%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(to_top,var(--background),transparent)]" />
+      </div>
 
       <div className="relative mx-auto w-full max-w-7xl px-5 pt-32 pb-24 lg:px-8">
         <div className="max-w-3xl">

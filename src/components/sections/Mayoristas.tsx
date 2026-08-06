@@ -4,7 +4,7 @@ import { SectionHeading } from "./SectionHeading";
 import { ActionButton } from "@/components/ui/action-button";
 import { MENSAJES, whatsappUrl } from "@/config/site";
 import { useReveal } from "@/hooks/useReveal";
-import { useParallax } from "@/hooks/useParallax";
+import { useScrollParallax } from "@/hooks/useScrollParallax";
 
 const BENEFICIOS = [
   { icon: HandCoins, titulo: "Precios especiales", texto: "Escalas de descuento por volumen." },
@@ -21,7 +21,7 @@ const BENEFICIOS = [
 export function Mayoristas() {
   const head = useReveal<HTMLDivElement>();
   const cardCta = useReveal<HTMLDivElement>({ delay: 200, variant: "scale" });
-  const bgParallax = useParallax<HTMLImageElement>(0.12);
+  const mayoristasParallaxRef = useScrollParallax<HTMLImageElement>({ speed: 0.22, scale: 1.15 });
 
   return (
     <section
@@ -29,16 +29,17 @@ export function Mayoristas() {
       className="relative overflow-hidden py-24 sm:py-32"
       style={{ background: "var(--gradient-wine)" }}
     >
-      <img
-        ref={bgParallax.ref}
-        src={mayoristasImg}
-        alt="Bodega de distribución con cajas de licores apiladas"
-        loading="lazy"
-        width={1280}
-        height={900}
-        style={bgParallax.style}
-        className="ken-burns absolute inset-0 h-[115%] w-full object-cover opacity-15 pointer-events-none"
-      />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <img
+          ref={mayoristasParallaxRef}
+          src={mayoristasImg}
+          alt="Bodega de distribución con cajas de licores apiladas"
+          loading="lazy"
+          width={1280}
+          height={900}
+          className="absolute inset-0 h-full w-full object-cover opacity-15"
+        />
+      </div>
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         <div ref={head.ref} className={head.className}>
           <SectionHeading
