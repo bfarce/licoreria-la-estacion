@@ -21,7 +21,11 @@ const BENEFICIOS = [
 export function Mayoristas() {
   const head = useReveal<HTMLDivElement>();
   const cardCta = useReveal<HTMLDivElement>({ delay: 200, variant: "scale" });
-  const mayoristasParallaxRef = useScrollParallax<HTMLImageElement>({ speed: 0.22, scale: 1.15 });
+  const mayoristasParallaxRef = useScrollParallax<HTMLImageElement>({
+    speed: 0.12,
+    scale: 1.15,
+    damp: 0.08,
+  });
 
   return (
     <section
@@ -37,8 +41,9 @@ export function Mayoristas() {
           loading="lazy"
           width={1280}
           height={900}
-          className="absolute inset-0 h-full w-full object-cover opacity-15"
+          className="absolute inset-0 h-full w-full object-cover opacity-25 mix-blend-overlay"
         />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         <div ref={head.ref} className={head.className}>

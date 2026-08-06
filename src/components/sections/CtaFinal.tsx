@@ -1,10 +1,17 @@
 import { MessageCircle } from "lucide-react";
+import heroImg from "@/assets/hero-licoreria.jpg";
 import { ActionButton } from "@/components/ui/action-button";
 import { MENSAJES, whatsappUrl } from "@/config/site";
 import { useReveal } from "@/hooks/useReveal";
+import { useScrollParallax } from "@/hooks/useScrollParallax";
 
 export function CtaFinal() {
   const reveal = useReveal<HTMLDivElement>();
+  const ctaParallaxRef = useScrollParallax<HTMLImageElement>({
+    speed: 0.12,
+    scale: 1.15,
+    damp: 0.08,
+  });
 
   return (
     <section
@@ -12,6 +19,16 @@ export function CtaFinal() {
       className="relative overflow-hidden py-28 sm:py-36"
       style={{ background: "var(--gradient-wine)" }}
     >
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <img
+          ref={ctaParallaxRef}
+          src={heroImg}
+          alt="Fondo licorería"
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover opacity-20 mix-blend-overlay"
+        />
+        <div className="absolute inset-0 bg-black/50" />
+      </div>
       <div
         aria-hidden="true"
         className="absolute inset-0"

@@ -1,6 +1,8 @@
 import { Award, BadgeCheck, MessagesSquare, ShieldCheck, Tags, Truck } from "lucide-react";
+import localImg from "@/assets/local-tienda.jpg";
 import { SectionHeading } from "./SectionHeading";
 import { useReveal } from "@/hooks/useReveal";
+import { useScrollParallax } from "@/hooks/useScrollParallax";
 
 const RAZONES = [
   { icon: Truck, titulo: "Entrega rápida", texto: "Despachos el mismo día en zona urbana." },
@@ -25,10 +27,25 @@ const RAZONES = [
 
 export function PorQueElegirnos() {
   const head = useReveal<HTMLDivElement>();
+  const bgParallaxRef = useScrollParallax<HTMLImageElement>({
+    speed: 0.12,
+    scale: 1.15,
+    damp: 0.08,
+  });
 
   return (
-    <section className="relative bg-surface py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-5 lg:px-8">
+    <section className="relative overflow-hidden bg-surface py-24 sm:py-32">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <img
+          ref={bgParallaxRef}
+          src={localImg}
+          alt="Fondo licorería"
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover opacity-20 mix-blend-overlay"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-surface/90 to-background" />
+      </div>
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         <div ref={head.ref} className={head.className}>
           <SectionHeading eyebrow="Nuestra promesa" title="¿Por qué elegirnos?" />
         </div>

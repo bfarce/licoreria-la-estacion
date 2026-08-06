@@ -5,7 +5,7 @@ import { MENSAJES, whatsappUrl } from "@/config/site";
 import { useScrollParallax } from "@/hooks/useScrollParallax";
 
 export function Hero() {
-  const parallaxRef = useScrollParallax<HTMLImageElement>({ speed: 0.28, scale: 1.12 });
+  const parallaxRef = useScrollParallax<HTMLImageElement>({ speed: 0.12, scale: 1.15, damp: 0.08 });
 
   return (
     <section id="inicio" className="relative flex min-h-[100svh] items-center overflow-hidden">
@@ -18,7 +18,7 @@ export function Hero() {
           height={1280}
           className="absolute inset-0 h-full w-full object-cover origin-center"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(100deg,oklch(0.1_0_0/0.94)_0%,oklch(0.1_0_0/0.78)_45%,oklch(0.1_0_0/0.5)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(100deg,oklch(0.1_0_0/0.78)_0%,oklch(0.1_0_0/0.58)_50%,oklch(0.1_0_0/0.38)_100%)]" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(to_top,var(--background),transparent)]" />
       </div>
 
