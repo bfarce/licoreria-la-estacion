@@ -1,7 +1,7 @@
 import { Clock, Facebook, Instagram, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { MENSAJES, SITE, externalClick, whatsappUrl } from "@/config/site";
 import { TikTokIcon } from "@/components/ui/tiktok-icon";
-import logoImg from "@/assets/logo-la-estacion.png";
+import { LOGO_IMAGE } from "@/assets/logo-data";
 
 const LINKS = [
   { label: "Inicio", href: "#inicio" },
@@ -16,14 +16,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 lg:grid-cols-4 lg:px-8">
         <div className="lg:col-span-2">
           <img
-            src={logoImg}
-            onError={(e) => {
-              const target = e.currentTarget;
-              if (!target.dataset.fallback) {
-                target.dataset.fallback = "true";
-                target.src = "/logo-la-estacion.png";
-              }
-            }}
+            src={LOGO_IMAGE}
             alt={`Logo de ${SITE.nombre} Licorera`}
             width={320}
             height={218}
