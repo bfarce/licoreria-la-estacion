@@ -41,8 +41,8 @@ export function Hero() {
             className="animate-fade-up mt-7 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg"
             style={{ animationDelay: "300ms" }}
           >
-            Distribuimos licores al por mayor y al detal con las mejores marcas del mercado. Cotiza
-            en minutos por WhatsApp con atención personalizada.
+            Ofrecemos la más exclusiva variedad de licores al detal con las mejores marcas del
+            mercado. Consulta precios y disponibilidad por WhatsApp en minutos.
           </p>
           <div
             className="animate-fade-up mt-10 flex flex-col gap-4 sm:flex-row sm:items-center"

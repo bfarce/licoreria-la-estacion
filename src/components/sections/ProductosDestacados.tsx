@@ -69,7 +69,7 @@ export function ProductosDestacados() {
           <SectionHeading
             eyebrow="Selección destacada"
             title="Catálogo de licores"
-            description="Explora nuestras marcas destacadas. Selecciona una categoría o expande la lista para ver la selección."
+            description="Te presentamos una muestra de nuestra selección. Contamos con un amplio portafolio y diversas referencias adicionales disponibles en tienda."
           />
         </div>
 
@@ -144,10 +144,22 @@ export function ProductosDestacados() {
           </>
         )}
 
-        <div className="mt-14 text-center">
-          <ActionButton href={whatsappUrl(MENSAJES.asesor)} variant="outline" size="lg">
-            Solicitar catálogo completo por WhatsApp
-          </ActionButton>
+        <div className="mt-16 mx-auto max-w-2xl rounded-2xl border border-gold/30 bg-card/60 p-6 sm:p-8 text-center backdrop-blur-sm shadow-xl">
+          <p className="text-xs uppercase tracking-[0.25em] text-gold font-medium">
+            ¿Buscas una marca o edición especial?
+          </p>
+          <h3 className="mt-2 font-display text-xl text-foreground sm:text-2xl">
+            Tenemos muchas más referencias disponibles
+          </h3>
+          <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+            Los productos exhibidos representan únicamente una muestra de nuestro catálogo.
+            Manejamos una amplia gama de licores nacionales e importados en tienda.
+          </p>
+          <div className="mt-6 flex justify-center">
+            <ActionButton href={whatsappUrl(MENSAJES.catalogo)} variant="gold" size="lg">
+              Consultar catálogo completo y marcas en WhatsApp
+            </ActionButton>
+          </div>
         </div>
       </div>
     </section>

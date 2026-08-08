@@ -35,17 +35,18 @@ export function Nosotros() {
             align="left"
             eyebrow="Nosotros"
             title="Una casa dedicada al buen licor"
-            description="En La Estación seleccionamos licores nacionales e importados para atender a clientes al detal y al por mayor con asesoría personalizada."
+            description="En La Estación seleccionamos cuidadosamente los mejores licores nacionales e importados para brindarte una atención al detal de primera categoría."
           />
           <div className="mt-8 space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
             <p>
               Trabajamos directamente con importadores y casas productoras para garantizar
               autenticidad, trazabilidad y precios justos en cada botella que sale de nuestra
-              bodega.
+              tienda.
             </p>
             <p>
-              Cada pedido se acompaña de asesoría real: te ayudamos a elegir el portafolio correcto
-              para tu evento, tu bar o tu punto de venta, y coordinamos la entrega por WhatsApp.
+              Cada pedido se acompaña de asesoría real: te ayudamos a elegir la botella ideal para
+              tu reunión, tu evento o tu consumo personal, y coordinamos la entrega inmediata por
+              WhatsApp.
             </p>
           </div>
         </div>

@@ -6,7 +6,7 @@ import type { MouseEvent } from "react";
  */
 export const SITE = {
   nombre: "La Estación",
-  eslogan: "Distribución premium de licores nacionales e importados",
+  eslogan: "Licorería & Bar con la mejor selección de licores nacionales e importados",
   whatsapp: "573123526566", // solo dígitos, con código de país
   email: "laestacionpitalito2025@gmail.com",
   telefono: "+57 312 352 6566",
@@ -45,8 +45,9 @@ export function externalClick(url: string) {
 const FIRMA = `Escribo desde la web de ${SITE.nombre}.`;
 
 export const MENSAJES = {
-  cotizacion: `Hola, buen día. ${FIRMA} Quisiera solicitar una cotización de licores. ¿Me pueden confirmar disponibilidad y precio?`,
-  mayorista: `Hola, buen día. ${FIRMA} Estoy interesado en compras al por mayor para mi negocio. ¿Me pueden enviar información sobre condiciones comerciales y despacho?`,
+  cotizacion: `Hola, buen día. ${FIRMA} Quisiera solicitar una cotización de licores al detal. ¿Me pueden confirmar disponibilidad y precio?`,
+  mayorista: `Hola, buen día. ${FIRMA} Quisiera consultar precios y disponibilidad de licores para una reunión o evento. ¿Me pueden brindar información?`,
+  eventos: `Hola, buen día. ${FIRMA} Quisiera consultar precios y disponibilidad de licores para una reunión o evento. ¿Me pueden brindar información?`,
   asesor: `Hola, buen día. ${FIRMA} Quisiera hablar con un asesor para recibir información sobre sus productos.`,
   catalogo: `Hola, buen día. ${FIRMA} Quisiera recibir información sobre las referencias que manejan y su disponibilidad.`,
   contacto: `Hola, buen día. ${FIRMA} Quisiera más información sobre sus productos y servicios.`,

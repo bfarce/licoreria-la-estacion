@@ -9,20 +9,20 @@ import { useReveal } from "@/hooks/useReveal";
 
 const FAQS = [
   {
-    q: "¿Venden al por mayor?",
-    a: "Sí. Manejamos precios especiales por volumen para bares, restaurantes, tiendas, hoteles y organizadores de eventos. Escríbenos por WhatsApp con tu lista de productos y te enviamos la cotización.",
+    q: "¿Cómo puedo comprar en La Estación?",
+    a: "Puedes visitarnos directamente en nuestro punto de venta físico en Pitalito o solicitar tus licores al detal a través de WhatsApp. Te confirmamos disponibilidad, precios y coordinamos tu pedido al instante.",
   },
   {
     q: "¿Realizan domicilios?",
-    a: "Realizamos entregas coordinadas dentro de la zona urbana de Pitalito y despachos programados según disponibilidad y zona para pedidos mayoristas.",
+    a: "Sí. Realizamos entregas y domicilios coordinados dentro de la zona urbana de Pitalito para que disfrutes de tus licores favoritos directamente en tu puerta.",
   },
   {
-    q: "¿Cómo solicito una cotización?",
-    a: "Pulsa cualquier botón de WhatsApp del sitio, indícanos los productos y cantidades, y un asesor te responde en minutos con disponibilidad y precio.",
+    q: "¿Cómo solicito información o pedidos?",
+    a: "Pulsa cualquier botón de WhatsApp del sitio, indícanos las referencias que deseas y un asesor te responderá en minutos con total disponibilidad y atención.",
   },
   {
     q: "¿Qué medios de pago aceptan?",
-    a: "Aceptamos efectivo, transferencia bancaria, PSE y tarjetas débito y crédito en el punto de venta. Para clientes mayoristas manejamos condiciones especiales.",
+    a: "Aceptamos efectivo, transferencias bancarias, PSE y tarjetas débito y crédito en nuestro punto de venta.",
   },
 ];
 

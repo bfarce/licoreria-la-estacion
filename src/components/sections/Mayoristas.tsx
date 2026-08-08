@@ -7,15 +7,31 @@ import { useReveal } from "@/hooks/useReveal";
 import { useScrollParallax } from "@/hooks/useScrollParallax";
 
 const BENEFICIOS = [
-  { icon: HandCoins, titulo: "Precios especiales", texto: "Escalas de descuento por volumen." },
+  {
+    icon: HandCoins,
+    titulo: "Precios competitivos",
+    texto: "Excelentes tarifas al detal en licores 100% garantizados.",
+  },
   {
     icon: Truck,
-    titulo: "Distribución",
-    texto: "Entregas coordinadas según disponibilidad y zona.",
+    titulo: "Servicio a Domicilio",
+    texto: "Entregas coordinadas en la zona urbana de Pitalito.",
   },
-  { icon: Headset, titulo: "Atención personalizada", texto: "Un asesor asignado a tu negocio." },
-  { icon: Boxes, titulo: "Grandes cantidades", texto: "Inventario disponible para pedidos altos." },
-  { icon: Timer, titulo: "Cotización inmediata", texto: "Respuesta por WhatsApp en minutos." },
+  {
+    icon: Headset,
+    titulo: "Asesoría personalizada",
+    texto: "Te ayudamos a elegir la botella perfecta para tu celebración.",
+  },
+  {
+    icon: Boxes,
+    titulo: "Portafolio Completo",
+    texto: "Amplio catálogo en licores nacionales e importados.",
+  },
+  {
+    icon: Timer,
+    titulo: "Respuesta Inmediata",
+    texto: "Atención rápida por WhatsApp para tomar tu pedido.",
+  },
 ];
 
 export function Mayoristas() {
@@ -29,7 +45,7 @@ export function Mayoristas() {
 
   return (
     <section
-      id="mayoristas"
+      id="eventos"
       className="relative overflow-hidden py-24 sm:py-32"
       style={{ background: "var(--gradient-wine)" }}
     >
@@ -37,7 +53,7 @@ export function Mayoristas() {
         <img
           ref={mayoristasParallaxRef}
           src={mayoristasImg}
-          alt="Bodega de distribución con cajas de licores apiladas"
+          alt="Selección de licores premium para eventos y reuniones"
           loading="lazy"
           width={1280}
           height={900}
@@ -49,9 +65,9 @@ export function Mayoristas() {
         <div ref={head.ref} className={head.className}>
           <SectionHeading
             align="left"
-            eyebrow="Venta al por mayor"
-            title="Un aliado para tu negocio"
-            description="Abastecemos bares, restaurantes, tiendas, hoteles y eventos con condiciones comerciales pensadas para crecer contigo."
+            eyebrow="Eventos & Celebraciones"
+            title="El licor perfecto para cada momento"
+            description="Atendemos tus reuniones familiares, fiestas y ocasiones especiales con la mejor variedad de licores al detal, garantizados y con entrega directa."
           />
         </div>
 
@@ -68,22 +84,22 @@ export function Mayoristas() {
             className={`card-premium rounded-3xl p-8 text-center sm:p-10 ${cardCta.className}`}
           >
             <p className="text-[0.68rem] uppercase tracking-[0.34em] text-gold">
-              Pedidos mayoristas
+              Atención Inmediata
             </p>
             <h3 className="mt-4 font-display text-3xl leading-snug text-foreground">
-              Cotiza tu pedido hoy y recibe una propuesta personalizada
+              Solicita tus licores para tu reunión o evento personal
             </h3>
             <p className="mt-4 text-sm text-muted-foreground">
-              Envíanos tu lista de productos y te confirmamos disponibilidad, precio y tiempos de
-              entrega.
+              Escríbenos las referencias que necesitas y coordinamos disponibilidad, precio y
+              entrega rápida en Pitalito.
             </p>
             <ActionButton
-              href={whatsappUrl(MENSAJES.mayorista)}
+              href={whatsappUrl(MENSAJES.eventos)}
               variant="gold"
               size="lg"
               className="mt-8 w-full"
             >
-              Solicitar cotización
+              Consultar por WhatsApp
             </ActionButton>
           </div>
         </div>

@@ -13,9 +13,9 @@ import { Faq } from "@/components/sections/Faq";
 import { CtaFinal } from "@/components/sections/CtaFinal";
 import { SITE } from "@/config/site";
 
-const TITLE = "La Estación | Licores al por mayor y al detal en Pitalito";
+const TITLE = "La Estación | Licorería & Bar en Pitalito - Licores al Detal";
 const DESCRIPTION =
-  "Catálogo premium de licores nacionales e importados en Pitalito. Whisky, ron, vodka, vinos y champañas al por mayor y al detal. Cotiza por WhatsApp en minutos.";
+  "Catálogo premium de licores nacionales e importados en Pitalito. Whisky, ron, aguardiente, tequila, vinos y cerveza al detal. Pedidos inmediatos por WhatsApp.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

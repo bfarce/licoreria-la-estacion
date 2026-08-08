@@ -77,16 +77,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "La Estación | Licorería & Bar en Pitalito - Licores al por Mayor y Detal" },
+      { title: "La Estación | Licorería & Bar en Pitalito - Licores al Detal" },
       {
         name: "description",
         content:
-          "La Estación Licorería & Bar en Pitalito, Huila. Venta y distribución de licores nacionales e importados: aguardiente, whisky, ron, tequila, ginebra, vodka, vinos y cerveza. Precios especiales al por mayor y entrega a domicilio.",
+          "La Estación Licorería & Bar en Pitalito, Huila. Venta al detal de licores nacionales e importados: aguardiente, whisky, ron, tequila, ginebra, vodka, vinos y cerveza. Atención personalizada y servicio a domicilio.",
       },
       {
         name: "keywords",
         content:
-          "licorería, licorera, La Estación, La Estación Pitalito, bar, licores, aguardiente, whisky, ron, tequila, ginebra, vodka, cerveza, licorería Pitalito, licores Pitalito, bar Pitalito, mayoristas de licores, distribuidora de licores Pitalito, licores a domicilio, Huila licores",
+          "licorería, licorera, La Estación, La Estación Pitalito, bar, licores, aguardiente, whisky, ron, tequila, ginebra, vodka, cerveza, licorería Pitalito, licores Pitalito, bar Pitalito, licores al detal, licores a domicilio, Huila licores",
       },
       {
         name: "robots",
@@ -99,21 +99,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "theme-color", content: "#0F0F0F" },
       {
         property: "og:title",
-        content: "La Estación | Licorería & Bar en Pitalito - Licores al por Mayor y Detal",
+        content: "La Estación | Licorería & Bar en Pitalito - Licores al Detal",
       },
       {
         name: "twitter:title",
-        content: "La Estación | Licorería & Bar en Pitalito - Licores al por Mayor y Detal",
+        content: "La Estación | Licorería & Bar en Pitalito - Licores al Detal",
       },
       {
         property: "og:description",
         content:
-          "La Estación Licorería & Bar en Pitalito, Huila. Venta de licores nacionales e importados: aguardiente, whisky, ron, tequila y cerveza. Precios al por mayor y detal.",
+          "La Estación Licorería & Bar en Pitalito, Huila. Venta al detal de licores nacionales e importados: aguardiente, whisky, ron, tequila y cerveza. Servicio a domicilio.",
       },
       {
         name: "twitter:description",
         content:
-          "La Estación Licorería & Bar en Pitalito, Huila. Venta de licores nacionales e importados: aguardiente, whisky, ron, tequila y cerveza. Precios al por mayor y detal.",
+          "La Estación Licorería & Bar en Pitalito, Huila. Venta al detal de licores nacionales e importados: aguardiente, whisky, ron, tequila y cerveza. Servicio a domicilio.",
       },
       {
         property: "og:image",
@@ -154,7 +154,7 @@ function RootShell({ children }: { children: ReactNode }) {
     name: "La Estación Licorería & Bar",
     image: "/logo-la-estacion.png",
     description:
-      "Distribuidora de licores nacionales e importados en Pitalito. Venta al por mayor y al detal de aguardiente, whisky, ron, tequila, ginebra, cerveza.",
+      "Venta al detal de licores nacionales e importados en Pitalito. Selección exclusiva de aguardiente, whisky, ron, tequila, ginebra y cerveza.",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Carrera 15 # 19B 04 SUR",

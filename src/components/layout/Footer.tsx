@@ -16,7 +16,7 @@ import { LOGO_IMAGE } from "@/assets/logo-data";
 const LINKS = [
   { label: "Inicio", href: "#inicio" },
   { label: "Productos", href: "#productos" },
-  { label: "Mayoristas", href: "#mayoristas" },
+  { label: "Eventos", href: "#eventos" },
   { label: "Nosotros", href: "#nosotros" },
   { label: "Contacto", href: "#contacto" },
 ];
@@ -107,8 +107,8 @@ export function Footer() {
             className="h-24 w-auto object-contain sm:h-28 drop-shadow-[0_4px_16px_rgba(212,175,55,0.4)]"
           />
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
-            {SITE.eslogan}. Atención al detal y al por mayor con entregas coordinadas según
-            disponibilidad.
+            {SITE.eslogan}. Venta al detal con atención personalizada y servicio a domicilio en
+            Pitalito.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a
