@@ -156,8 +156,13 @@ export function ProductosDestacados() {
             Manejamos una amplia gama de licores nacionales e importados en tienda.
           </p>
           <div className="mt-6 flex justify-center">
-            <ActionButton href={whatsappUrl(MENSAJES.catalogo)} variant="gold" size="lg">
-              Consultar catálogo completo y marcas en WhatsApp
+            <ActionButton
+              href={whatsappUrl(MENSAJES.catalogo)}
+              variant="gold"
+              size="lg"
+              className="w-full sm:w-auto max-w-full text-center px-4 sm:px-8"
+            >
+              Consultar catálogo completo en WhatsApp
             </ActionButton>
           </div>
         </div>

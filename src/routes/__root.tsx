@@ -170,6 +170,11 @@ function RootShell({ children }: { children: ReactNode }) {
     telephone: "+573123526566",
     email: "laestacionpitalito2025@gmail.com",
     priceRange: "$$",
+    sameAs: [
+      "https://www.instagram.com/laestacionpitalito",
+      "https://www.facebook.com/LicoreraLaEstacionPitalito",
+      "https://www.tiktok.com/@laestacionpitalito",
+    ],
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",

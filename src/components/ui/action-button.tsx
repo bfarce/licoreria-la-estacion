@@ -6,7 +6,7 @@ type Variant = "gold" | "outline" | "whatsapp";
 type Size = "md" | "lg" | "xl";
 
 const base =
-  "group relative inline-flex items-center justify-center gap-2.5 rounded-full font-medium tracking-wide transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+  "group relative inline-flex items-center justify-center gap-2.5 rounded-full font-medium tracking-wide transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background text-center";
 
 const variants: Record<Variant, string> = {
   gold: "bg-[image:var(--gradient-gold)] bg-[length:200%_auto] bg-left text-primary-foreground shadow-[var(--shadow-gold)] hover:bg-right hover:-translate-y-0.5",
@@ -17,9 +17,9 @@ const variants: Record<Variant, string> = {
 };
 
 const sizes: Record<Size, string> = {
-  md: "h-11 px-6 text-sm",
-  lg: "h-14 px-8 text-base",
-  xl: "h-16 px-10 text-base sm:text-lg",
+  md: "min-h-[2.75rem] px-5 sm:px-6 text-sm py-2.5 sm:py-0 leading-snug sm:h-11",
+  lg: "min-h-[3.25rem] px-5 sm:px-8 text-sm sm:text-base py-3 sm:py-0 leading-snug sm:h-14",
+  xl: "min-h-[3.5rem] px-6 sm:px-10 text-base sm:text-lg py-3.5 sm:py-0 leading-snug sm:h-16",
 };
 
 interface Props {

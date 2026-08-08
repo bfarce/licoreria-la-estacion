@@ -13,9 +13,9 @@ export const SITE = {
   direccion: "Carrera 15 # 19B 04 SUR, Pitalito",
   horario: "Lun - Jue: 9:00 a.m. - 9:00 p.m. · Vie - Sáb y festivos: 10:00 a.m. - media noche",
   redes: {
-    instagram: "https://instagram.com",
-    facebook: "https://facebook.com",
-    tiktok: "https://tiktok.com",
+    instagram: "https://www.instagram.com/laestacionpitalito?igsh=MWlsZDI3bjl2d2xqdw==",
+    facebook: "https://www.facebook.com/LicoreraLaEstacionPitalito?mibextid=wwXIfr",
+    tiktok: "https://www.tiktok.com/@laestacionpitalito?_r=1&_t=ZS-98fUCcvXgVY",
   },
 } as const;
 
