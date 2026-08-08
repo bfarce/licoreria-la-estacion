@@ -77,27 +77,43 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "La Estación | Licores premium al por mayor y al detal" },
+      { title: "La Estación | Licorería & Bar en Pitalito - Licores al por Mayor y Detal" },
       {
         name: "description",
         content:
-          "Distribuidora de licores nacionales e importados en Pitalito. Catálogo premium y cotización inmediata por WhatsApp.",
+          "La Estación Licorería & Bar en Pitalito, Huila. Venta y distribución de licores nacionales e importados: aguardiente, whisky, ron, tequila, ginebra, vodka, vinos y cerveza. Precios especiales al por mayor y entrega a domicilio.",
       },
-      { property: "og:site_name", content: "La Estación" },
+      {
+        name: "keywords",
+        content:
+          "licorería, licorera, La Estación, La Estación Pitalito, bar, licores, aguardiente, whisky, ron, tequila, ginebra, vodka, cerveza, licorería Pitalito, licores Pitalito, bar Pitalito, mayoristas de licores, distribuidora de licores Pitalito, licores a domicilio, Huila licores",
+      },
+      {
+        name: "robots",
+        content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      },
+      { property: "og:site_name", content: "La Estación Licorería & Bar" },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "es_CO" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#0F0F0F" },
-      { property: "og:title", content: "La Estación | Licores premium al por mayor y al detal" },
-      { name: "twitter:title", content: "La Estación | Licores premium al por mayor y al detal" },
+      {
+        property: "og:title",
+        content: "La Estación | Licorería & Bar en Pitalito - Licores al por Mayor y Detal",
+      },
+      {
+        name: "twitter:title",
+        content: "La Estación | Licorería & Bar en Pitalito - Licores al por Mayor y Detal",
+      },
       {
         property: "og:description",
         content:
-          "Distribuidora de licores nacionales e importados en Pitalito. Catálogo premium y cotización inmediata por WhatsApp.",
+          "La Estación Licorería & Bar en Pitalito, Huila. Venta de licores nacionales e importados: aguardiente, whisky, ron, tequila y cerveza. Precios al por mayor y detal.",
       },
       {
         name: "twitter:description",
         content:
-          "Distribuidora de licores nacionales e importados en Pitalito. Catálogo premium y cotización inmediata por WhatsApp.",
+          "La Estación Licorería & Bar en Pitalito, Huila. Venta de licores nacionales e importados: aguardiente, whisky, ron, tequila y cerveza. Precios al por mayor y detal.",
       },
       {
         property: "og:image",
@@ -132,10 +148,82 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const jsonLdData = {
+    "@context": "https://schema.org",
+    "@type": ["LiquorStore", "BarOrPub"],
+    name: "La Estación Licorería & Bar",
+    image: "/logo-la-estacion.png",
+    description:
+      "Distribuidora de licores nacionales e importados en Pitalito. Venta al por mayor y al detal de aguardiente, whisky, ron, tequila, ginebra, cerveza.",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Carrera 15 # 19B 04 SUR",
+      addressLocality: "Pitalito",
+      addressRegion: "Huila",
+      addressCountry: "CO",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 1.849722,
+      longitude: -76.048611,
+    },
+    telephone: "+573123526566",
+    email: "laestacionpitalito2025@gmail.com",
+    priceRange: "$$",
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
+        opens: "09:00",
+        closes: "21:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Friday", "Saturday", "Sunday"],
+        opens: "10:00",
+        closes: "00:00",
+      },
+    ],
+    servesCuisine: "Licores, Bebidas, Bar",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Catálogo de Licores La Estación",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Product", name: "Aguardiente Doble Anís" } },
+        { "@type": "Offer", itemOffered: { "@type": "Product", name: "Aguardiente Antioqueño" } },
+        { "@type": "Offer", itemOffered: { "@type": "Product", name: "Whisky Old Parr 12 Años" } },
+        {
+          "@type": "Offer",
+          itemOffered: { "@type": "Product", name: "Whisky Buchanan's Deluxe 12 Años" },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: { "@type": "Product", name: "Whisky Johnnie Walker Black Label" },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: { "@type": "Product", name: "Ron Viejo de Caldas 3 Años" },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: { "@type": "Product", name: "Tequila Don Julio Reposado" },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: { "@type": "Product", name: "Ginebra Tanqueray London Dry" },
+        },
+      ],
+    },
+  };
+
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
+        />
       </head>
       <body>
         {children}
